@@ -40,7 +40,7 @@ It wasn't much, but I added extra reactionary animations to some of the elements
 **4.  Deployment**
 Just for the sake of ease of access, I was going to set up an online deployment, but it seems that the original files were modified in a way that results in a broken build after running `npm run build`.
 
-**What would I Could Have Done Better**
+**What I Could Have Done Better**
 Looking back at it now, I probably could have done somethings better. I probably could have simplified the Container, ContainerItem, List, ListItem, Alert, and AlertItem components into more two more general purpose components since they all followed the same Container-Item type relationship, and it would have better aligned with both the DRY Principle and the Atomic Design Methodology when it comes to reusability.
 
 I also probably should have implemented the `DELETE_ALL_ITEMS` action within the `actions.js` file since it would conform more to already preset conventions.
