@@ -30,8 +30,6 @@ Another you'll notice is my use of the `style-jsx` library (which I took the lib
 **2. Building the Logic**
 I'll be honest, I hadn't touched Redux in a while, so I just did a quick review on how Redux handled state management, and how it relates in the context of React, and it was pretty easy connecting the item-adding and item-deleting features after that.
 
-![](src/assets/img04.png)
-
 The only extra thing I did was add an an extra action to delete all the items for the submission feature, directly in the `reducer.js` file just to clear the wish list upon submission.
 
 **3. Adding Responsiveness**
@@ -47,7 +45,7 @@ Looking back at it now, I probably could have done somethings better. I probably
 
 I also probably should have implemented the `DELETE_ALL_ITEMS` action within the `actions.js` file since it would conform more to already preset conventions.
 
-![](src/assets/img03.png)
+![](src/assets/img04.png)
 
 I also would have abstracted some of the logic into their own functions just to clean up some of the code, and so it wouldn't look to frustrating to read.
 
