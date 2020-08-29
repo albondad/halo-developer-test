@@ -1,37 +1,52 @@
-### New Developer Test: Wish List For Santa
 
-For this assignment, you must build a basic application using React and Redux that allows users to add items (strings) to a "wish list" and then submit the list (to Santa).
+# Halo Developer Test
 
-## Demo
-![](src/assets/demo.gif)
+## Description
+This repository contains my solution to the Developer Test provided by Halo. Below, I thought it would be useful to include my thought process, to help show how I approached this problem. Feel free to view the [ONLINE DEPLOYMENT HERE](https://halo-test.herokuapp.com/)
 
-## Requirements
-  * Clone the repository and run `npm install` or  `yarn add` to set up your local environemnt.  When you are finished with your solution, push to a new remote branch and email Kevin to let him know you are finished so your work can be reviewed.
+## My Process
+**The Process** 
+After reading the prompt, the process I cam up with was pretty straightforward as outlined below:
+1. Building the User Interface
+2. Building the Logic
+3. Add Responsiveness
+4.  Deployment
 
-  <br/>
+**1. Build the User Interface**
+I like to organize my React components following loosely follow Brad Frost's Atomic Design methodology, where he separates the design elements into atoms, molecules, organisms, templates, and pages, with each element being more abstract as the levels go on. Of course this project didn't require that much complexity, so I didn't have to build anything beyond molecule-type components.
 
-  * Items may not be empty strings nor duplicates of an item already on the list.
-  * Clicking on an item in the list should remove it from the list.
-  * Clicking the submit button should clear the wish list and create an alert that says 'Wish list submitted to Santa!'
-  * User cannot submit if their wish list is empty.
-
-  <br/>  
-
-  * Please complete the Redux reducer in redux > reducer.jsx.  (Adding and deleting items from the list should be handled by Redux.)
-  * Everything else regarding Redux has been done for you (i.e. store, actions, etc.) and can be found in the "redux" folder
-
-  <br/>
-
-  * Please give a reasonable effort to match the styling in the demo.  As a head start, the inner container's dimensions are 400px x 540px.  You do not need to worry about the font-family.
+![](src/assets/img-01.png)
 
 
-## Guidelines
-  * Aside from styling and reducer.jsx, all code should be written inside of App.jsx.
-  * You may use hooks or class components, whatever you prefer.
-  * You may use any styling libraries if you prefer (e.g. Styled-Components, Aphrodite, etc.).
+Usually, I would set up more clear file structure for more organization, but since the test wanted me to have most of my code within the `App.js` file, I just built the components inside there and separated them using comments.
 
-  <br/>
+I thought it would be boring to just show the use the default alert interface upon submission, so I just built some components and reused already existing components to keep everything in style.
 
-  * Make sure to write code that you would be comfortable contributing in a professional setting.  Cleanliness and maintainability are just as important as making sure that it actually works.
-  * In total, this assignment shouldn't take more than an hour or two to complete.  It's just a quick way to get a better feel for where you are at, so don't spend your entire day on it.
-  * If you get stuck, feel free to leave comments in the code explaining how you would go about completing that part instead.
+Another you'll notice is my use of the `style-jsx` library (which I took the liberty to add as a babel plugin) throughout the components, just because I find it more convenient to be able write out inline styling along with the fact that the library protects against overlapping styling issues. It usually makes more sense when the components are divided into their own files, since now the component along with it's styling is all located within one style.
+
+**2. Building the Logic**
+I'll be honest, I hadn't touched Redux in a while, so I just did a quick review on how Redux handled state management, and how it relates in the context of React, and it was pretty easy connecting the item-adding and item-deleting features after that.
+
+The only extra thing I did was add an an extra action to delete all the items for the submission feature, directly in the `reducer.js` file just to clear the wish list upon submission.
+
+**3. Adding Responsiveness**
+Although this usually isn't necessary when building the minimum, (which is why I save this toward end) I do think it's important to make web applications responsive to help guide the user's interactions and experience, and it's just generally fun. 
+
+It wasn't much, but I added extra reactionary animations to some of the elements to help indicate guide the user when using the application.
+
+**4.  Deployment **
+Just for the sake of ease of access, so people don't need to download this, install the modules, run the server, etc. etc, I just set up a online deployment up on Heroku so it could be easy to play around with and test.
+
+Feel free to view the [ONLINE DEPLOYMENT HERE](https://halo-test.herokuapp.com/)
+
+**What would I Could Have Done Better**
+Looking back at it now, I probably could have done somethings better. I probably could have simplified the Container, ContainerItem, List, ListItem, Alert, and AlertItem components into more two more general purpose components since they all followed the same Container-Item type relationship, and it would have better aligned with both the DRY Principle and the Atomic Design Methodology when it comes to reusability.
+
+I also probably should have implemented the `DELETE_ALL_ITEMS` action within the `actions.js` file since it would conform more to already preset conventions.
+
+I also would have abstracted some of the logic into their own functions just to clean up some of the code, and so it wouldn't look to frustrating to read.
+
+**Overall**
+It was pretty fun, pretty simple test. Nice thing to do on a Friday.
+
+
