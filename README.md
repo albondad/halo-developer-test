@@ -2,7 +2,7 @@
 # Halo Developer Test
 
 ## Description
-This repository contains my solution to the Developer Test provided by Halo. Below, I thought it would be useful to include my thought process, to help show how I approached this problem. Feel free to view the [ONLINE DEPLOYMENT HERE](https://halo-test.herokuapp.com/)
+This repository contains my solution to the Developer Test provided by Halo. Below, I thought it would be useful to include my thought process, to help show how I approached this test.
 
 ## My Process
 **The Process** 
@@ -10,13 +10,12 @@ After reading the prompt, the process I cam up with was pretty straightforward a
 1. Building the User Interface
 2. Building the Logic
 3. Add Responsiveness
-4.  Deployment
+4. Deployment
 
 **1. Build the User Interface**
 I like to organize my React components following loosely follow Brad Frost's Atomic Design methodology, where he separates the design elements into atoms, molecules, organisms, templates, and pages, with each element being more abstract as the levels go on. Of course this project didn't require that much complexity, so I didn't have to build anything beyond molecule-type components.
 
 ![](src/assets/img-01.png)
-
 
 Usually, I would set up more clear file structure for more organization, but since the test wanted me to have most of my code within the `App.js` file, I just built the components inside there and separated them using comments.
 
@@ -34,10 +33,8 @@ Although this usually isn't necessary when building the minimum, (which is why I
 
 It wasn't much, but I added extra reactionary animations to some of the elements to help indicate guide the user when using the application.
 
-**4.  Deployment **
-Just for the sake of ease of access, so people don't need to download this, install the modules, run the server, etc. etc, I just set up a online deployment up on Heroku so it could be easy to play around with and test.
-
-Feel free to view the [ONLINE DEPLOYMENT HERE](https://halo-test.herokuapp.com/)
+**4.  Deployment**
+Just for the sake of ease of access, I was going to set up an online deployment, but it seems that the original files were modified in a way that results in a broken build after running `npm run build`.
 
 **What would I Could Have Done Better**
 Looking back at it now, I probably could have done somethings better. I probably could have simplified the Container, ContainerItem, List, ListItem, Alert, and AlertItem components into more two more general purpose components since they all followed the same Container-Item type relationship, and it would have better aligned with both the DRY Principle and the Atomic Design Methodology when it comes to reusability.
